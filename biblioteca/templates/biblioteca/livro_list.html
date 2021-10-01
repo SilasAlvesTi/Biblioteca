@@ -1,0 +1,26 @@
+{% extends "biblioteca/base.html" %}
+
+{% block titulo %} biblioteca {% endblock %}
+
+{% block conteudo %}
+    {% for livro in livro_list %}
+        <article>
+            <h2> 
+                <a href="{{ livro.get_absolute_url }}">
+                    {{ livro.titulo }}
+                </a>
+            </h2>
+            <p> 
+                Autor: {{ livro.autor }}
+            </p>
+            <ul>
+                <li>
+                    <a href="{% url 'biblioteca:update' pk=livro.id %}">Editar</a>
+                </li>
+                <li>
+                    <a href="{% url 'biblioteca:delete' pk=livro.id %}">Deletar</a>
+                </li>
+            </ul>
+        </article>
+    {% endfor %}
+{% endblock %}

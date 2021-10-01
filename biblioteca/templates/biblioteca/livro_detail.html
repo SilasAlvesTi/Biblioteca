@@ -1,0 +1,22 @@
+{% extends "biblioteca/base.html" %}
+
+{% block titulo %}{{ livro.titulo }}{% endblock %}
+
+{% block conteudo %}
+    <p>{{ livro.id }}</p>
+    <h2>{{ livro.titulo }}</h2>
+    <div class="date">
+        <p>Livro adicionado na data: {{ livro.criado }}</p>
+    </div>
+    <p>Autor: {{ livro.autor }}</p>
+    <p>{{ livro.quantidade }} exemplares disponíveis</p>
+    {{ livro.resumo }}
+    <br>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="adicionar">
+    </form>
+    <!-- <a href="/biblioteca/emprestimo/">Realizar emprestimo</a> -->
+{% endblock %}

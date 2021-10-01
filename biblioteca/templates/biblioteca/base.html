@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <center>
+            {% if user.is_authenticated %}
+                <h1>Bem vindo {{ user.username }}!</h1>
+                <p><a href="{% url 'logout' %}">Sair</a></p>
+            {% endif %}
+            <h3><a href="/biblioteca/create">Adicionar um livro</a></h3>
+            <h3><a href="/autor/create">Adicionar um Autor</a></h3>
+            <h3><a href="/aluno/create">Adicionar um Aluno</a></h3>
+            <h3><a href="/biblioteca/">Página inicial</a></h3>
+        </center>
+    </header>
+
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+<form action="/biblioteca/templates/biblioteca/livro_detail.html" method="POST">
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <select>
+            {% for aluno in querry_aluno %}
+                <option value="aluno-nome">{{ aluno.nome }}</option>
+            {% endfor %}
+        </select>
+        <select>
+            {% for livro in querry_livro %}
+                <option value="livro-titulo">{{ livro.titulo }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="emprestar">
+    </form>
+    
+</form>
