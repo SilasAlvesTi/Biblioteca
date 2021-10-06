@@ -1,8 +1,9 @@
 {% extends "biblioteca/base.html" %}
-
+{% load static %}
 {% block titulo %}{{ livro.titulo }}{% endblock %}
 
 {% block conteudo %}
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <p>{{ livro.id }}</p>
     <h2>{{ livro.titulo }}</h2>
     <div class="date">

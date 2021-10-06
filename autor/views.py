@@ -2,15 +2,17 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.http.response import HttpResponseRedirect
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Autor
 
 
-class AutorListView(ListView):
+class AutorListView(LoginRequiredMixin,ListView):
+    login_url = reverse_lazy('login')
     model = Autor
 
 
-class AutorCreate(CreateView):
+class AutorCreate(LoginRequiredMixin,CreateView):
+    login_url = reverse_lazy('login')
     model = Autor
     fields = [
         "nome",

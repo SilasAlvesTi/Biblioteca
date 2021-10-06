@@ -1,18 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apagar Livro</title>
+       <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <center>
         <h1><a href="/biblioteca/">Página inicial</a></h1>
         Tem certeza que quer tirar o livro <strong>{{ object.titulo }}</strong> da lista?
-        <form action="." method="POST">
+        <br>
+        <form action="." method="POST"  id="register">
             {% csrf_token %}
-            <input type="submit" value="Apagar">
+            <input type="submit" value="Apagar" id="bookCover">
         </form>
     </center>  
 </body>

@@ -1,0 +1,24 @@
+{% load static %}
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+
+      <nav>
+        <a class="logo" href="/">Bem vindo {{ user.username }}!</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+             <div class="line4"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a class="at" href="">Início</a></li>
+          <li><a class="at" href="#">Empréstimo</a></li>
+          <li><a class="at"href="#">Lista de Alunos</a></li>
+          <li><a class="at" href="#">Histórico de Empréstimos</a></li>
+
+
+        </ul>
+          <div>
+                <li><a class="at" href="{% url 'logout' %}"> Logout </a></li>
+          </div>
+      </nav>

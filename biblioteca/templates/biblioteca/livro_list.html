@@ -4,7 +4,9 @@
 
 {% block conteudo %}
     {% for livro in livro_list %}
+
         <article>
+            <section align="center">
             <h2> 
                 <a href="{{ livro.get_absolute_url }}">
                     {{ livro.titulo }}
@@ -14,13 +16,16 @@
                 Autor: {{ livro.autor }}
             </p>
             <ul>
-                <li>
+
                     <a href="{% url 'biblioteca:update' pk=livro.id %}">Editar</a>
-                </li>
-                <li>
+
+
                     <a href="{% url 'biblioteca:delete' pk=livro.id %}">Deletar</a>
-                </li>
+
             </ul>
+            </section>
         </article>
+
+
     {% endfor %}
 {% endblock %}
