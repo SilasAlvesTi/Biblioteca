@@ -29,5 +29,6 @@ urlpatterns = [
     path("biblioteca/", include("biblioteca.urls", namespace="biblioteca")),
     path("autor/", include("autor.urls", namespace="autor")),
     path("aluno/", include("aluno.urls", namespace="aluno")),
+    path("emprestimo/", include("emprestimo.urls", namespace="emprestimo")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]

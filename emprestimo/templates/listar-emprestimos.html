@@ -1,0 +1,45 @@
+<!-- {% load static %} -->
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+<h3>Lista de Emprestimos</h3>
+
+<hr>
+<div class="table-responsive">
+ <a href="/biblioteca/">
+    <button type="submit" class="btn btn-danger"> Voltar</button>
+    </a>
+    <a href='cadastrar-emprestimo/'>
+<button type="submit" class="btn btn-danger">Novo Empréstimo</button>
+</a>
+    <br></br>
+<table class="table table-striped" CELLPADDING=20 CELLSPACING=6 border="3">
+
+    <tr>
+        <th>ID</th>
+        <th>Data do Emprestimo</th>
+        <th>Livro</th>
+        <th>Aluno</th>
+        <th>Data de Entrega</th>
+        <th>Opções</th>
+    </tr>
+
+{% for atividade in object_list %}
+<tr>
+    <td>{{ atividade.pk }}</td>
+    <td>{{ atividade.data_criacao }}</td>
+    <td>{{ atividade.livro }}</td>
+    <td>{{ atividade.aluno }}</td>
+    <td>{{ atividade.data_entrega }}</td>
+     <td>
+         <a href="#" title="Editar">Editar </a>
+         <a href="#" title="Excluir"> Excluir</a>
+     </td>
+</tr>
+{% empty %}
+<tr>
+<td colspan="3">
+    Nenhuma atividade Registrada
+</td>
+</tr>
+{% endfor %}
+</table>
+    </div>

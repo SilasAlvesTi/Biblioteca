@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "home.apps.HomeConfig",
     "autor.apps.AutorConfig",
     "aluno.apps.AlunoConfig",
+    "emprestimo.apps.EmprestimoConfig",
 ]
 
 MIDDLEWARE = [

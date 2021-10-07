@@ -11,11 +11,13 @@ class Livro(models.Model):
     titulo = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
-    emprestimo = models.ForeignKey(Aluno, on_delete=models.CASCADE, null=True)
     resumo = models.TextField()
     criado = models.DateTimeField(auto_now_add=True, null=True)
     atualizado = models.DateTimeField(auto_now_add=True, null=True)
     isbn = models.CharField(max_length=13, null=True)
+
+    class Meta:
+        db_table = "livro"
 
     def save(self):
 
